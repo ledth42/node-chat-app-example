@@ -13,6 +13,7 @@ socket.on('connect', function() {
 
 // listen new message
 socket.on('newMessage', function(message) {
+  console.log('newMessage: ', message);
   const formattedTime = moment(message.createdAt).format('h:mm a');
   const messageTemplate = $('#message-template').html();
   const html = Mustache.render(messageTemplate, {

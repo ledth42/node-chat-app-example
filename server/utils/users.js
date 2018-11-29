@@ -21,8 +21,8 @@ class Users {
     return this.users.find(user => user.id === id);
   }
 
-  getUserByName(name) {
-    return this.users.find(user => user.name === name);
+  getUserByName(name, room) {
+    return this.users.find(user => (user.name === name) && (user.room === room.toUpperCase()));
   }
 
   getUserList(room) {

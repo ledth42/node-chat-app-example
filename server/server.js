@@ -27,7 +27,7 @@ io.on('connection', (socket) => {
       return callback('Name & room name are required!');
     }
 
-    const user = users.getUserByName(params.name);
+    const user = users.getUserByName(params.name, params.room);
     if (user) {
       return callback('User already joined!');
     }

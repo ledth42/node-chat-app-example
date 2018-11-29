@@ -55,12 +55,12 @@ describe('Users', () => {
   });
 
   it('should return user by name', () => {
-    const user = users.getUserByName('User name 1');
+    const user = users.getUserByName('User name 1', 'ROOM A');
     expect(user.name).toEqual('User name 1');
   });
 
   it('should not return any user with name not exist', () => {
-    const user = users.getUserByName('User name 12');
+    const user = users.getUserByName('User name 12', 'ROOM A');
     expect(user).toBeFalsy();
   });
 });
