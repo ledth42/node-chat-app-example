@@ -29,7 +29,7 @@ io.on('connection', (socket) => {
 
     const user = users.getUserByName(params.name, params.room);
     if (user) {
-      return callback('User already joined!');
+      return callback('User already joined this room!');
     }
     // add new user
     users.removeUser(socket.id);
@@ -53,9 +53,7 @@ io.on('connection', (socket) => {
   socket.on('createMessage', (message, callback) => {
     console.log('Create message: ', message);
     const user = users.getUser(socket.id);
-    console.log('user: ', user);
     if (user) {
-      console.log('user.room: ', user.room);
       io.to(user.room).emit('newMessage', generateMessage(user.name, message.message));
     }
     callback();
