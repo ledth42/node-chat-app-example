@@ -17,7 +17,7 @@ socket.on('newMessage', function(message) {
   const formattedTime = moment(message.createdAt).format('h:mm a');
   const messageTemplate = $('#message-template').html();
   const html = Mustache.render(messageTemplate, {
-    text: message.message,
+    message: message.message,
     from: message.from,
     createdAt: formattedTime
   })

@@ -4,7 +4,7 @@ class Users {
   }
 
   addUser(id, name, room) {
-    const user = { id, name, room: room.toUpperCase() };
+    const user = { id, name, room };
     this.users.push(user);
     return user;
   }
